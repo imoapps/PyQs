@@ -1,4 +1,15 @@
+#!usr/bin/env python
+""" Title: floor_estimator.py
+        Author: Ian Alexander Mo
+        ImoApps.org
+        version 0.51
+        """
+
 def area ():
+    """ this program requests  the length and width of a space to be tiled ,
+          area returns the  calculated values in a raw data format .
+    """
+        
     # get the length and width of the area to be estimated from the user
     length = raw_input("Enter the Length of the Area to be estimated \n \
     in decimal running feet  :\n")
