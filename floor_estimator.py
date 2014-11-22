@@ -1,29 +1,44 @@
-def area (l , w):
-    area= l * w
-    return area()
-w = 15.5
-l = 21.25
-living_area = l * w
-w = 4.58
-l = 8.75
-verandah_area = l * w
-w = 5
-l = 10
-laundry_area = l * w
-w = 1.16
-l = 4.33
-less = l * w
-w = 15.5
-l = 21.25
-radius1 = 2.5
-radius2 = 3.67
+def area ():
+    # get the length and width of the area to be estimated from the user
+    length = raw_input("Enter the Length of the Area to be estimated \n \
+    in decimal running feet  :\n")
+    width = raw_input("Enter the width :\n")
 
-step_area = (22/7)*(radius2 *2)
-total_area= living_area+verandah_area+laundry_area+step_area - less
-tile_length= 24/12 ##input("Enter Tile Length: "  )
-tile_area = tile_length*tile_length
-tile_amount = total_area/tile_area
-tile_per_box = 12
-boxes = tile_amount/tile_per_box
+    # get the size of the tile to be used for the job
+    tile_length = raw_input("Enter the length of the selected tile,\n \
+    in decimal inches :\n")
+    tile_width = raw_input("Enter the width of the selected tile,\n \
+    in decimal inches :\n")
+     # calculate data 
+    floor_area = float(length) * float(width)
+    tile_area = float(tile_length)* float(tile_width)
 
-print (total_area,tile_amount,boxes )
+    tile_amount = floor_area/tile_area
+    
+    # return raw data
+    return (length,width,floor_area,tile_amount)
+
+# generate a floor report
+
+def floorReport ():
+    
+    e,w,a,ta=area() # call to area function 
+    e=round(e,2) # tidying up  the data 
+    w=round(w,2)
+    a=round(a,2)
+    ta=round(ta)
+    # add 2 extra tiles per 100 sqft of space
+    test = a/100.
+    print 'test {}'.format(test)
+    #if a/100>1:
+       # ta=int(ta)+2  # add t
+    
+    
+    print "Length of area : {} feet.\n\
+                Width of area : {} feet.\n \
+                Area calculated : {} square meters \n\
+                Amount of Tiles required for the job : {} each ".format(e,w,a,ta)
+
+floorReport()
+
+
